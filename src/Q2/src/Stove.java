@@ -7,7 +7,7 @@
  * modifications you have made and what problems they fix or 
  * prevent, with references to the questions of the subject (Q1, Q2, etc.)
  */
-
+package Q2.src;
 /**
  * Objects that are instances of the Stove class represent stoves to prepare
  * food. The principle is as follows: the call to prepare() picks an element
@@ -46,8 +46,10 @@ class Stove extends Thread {
      */
     public void prepare() {
         A.get();
-        try { Thread.sleep(64); } catch(InterruptedException e) {}
+        //try { Thread.sleep(64); } catch(InterruptedException e) {}
+        //System.out.println("Thread : " + Thread.currentThread().getName() + " : " + A.display());
         B.put();
+        //System.out.println("Thread : " + Thread.currentThread().getName() + " : " + B.display());
     }
 
     /**
@@ -71,10 +73,6 @@ class Stove extends Thread {
      * @param args not used
      */
     static public void main(String[] args) {
-        Stock stockInput = new Stock("input", 4);
-        Stock stockOutput = new Stock("output", 1);
-        new Stove(stockInput, stockOutput, 2).work();
-        stockInput.display();
-        stockOutput.display();
+        //Stove.main(new String[0]);
     }
 }

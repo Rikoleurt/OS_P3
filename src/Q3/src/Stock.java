@@ -7,7 +7,7 @@
  * modifications you have made and what problems they fix or 
  * prevent, with references to the questions of the subject (Q1, Q2, etc.)
  */
-
+package Q3.src;
 /**
  * Objects of class Stock represent a set of food. Food is not effectively stored,
  * only a counter is used to represent how much food is available.
@@ -61,10 +61,6 @@ class Stock {
      * @param args not used
      */
     static public void main(String[] args) {
-        Stock stock = new Stock("test", 5);
-        stock.put();
-        stock.display();
-        stock.get();
-        stock.display();
+        //Stock_Q2.main(new String[0]);
     }
 }

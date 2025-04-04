@@ -7,7 +7,7 @@
  * modifications you have made and what problems they fix or 
  * prevent, with references to the questions of the subject (Q1, Q2, etc.)
  */
-
+package Q3.src;
 /**
  * Objects instances of Kitchen represent a kitchen with initially two stoves and 
  * two stocks: initial stock of 16 food and empty final stock. Stoves are used to
@@ -31,8 +31,7 @@ class Kitchen {
     /**
      * Main entry point: proceed to operate the kitchen work of preparation
      */
-    public synchronized void work() {
-        System.out.println("CPU core nb : " + Runtime.getRuntime().availableProcessors());
+    public void work() {
         System.out.println("Starting kitchen work ...");
         long initialTime = System.currentTimeMillis();
 
@@ -42,13 +41,13 @@ class Kitchen {
         try {
             stove1.join();
             stove2.join();
+            System.out.println("Thread : " + Thread.currentThread().getName() + " : " + stockOutput.display());
 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         stockInput.display();
         stockOutput.display();
-        System.out.println("Thread : " + Thread.currentThread().getName() + " : " + stockInput.display());
         System.out.println("... done ("+((double)(System.currentTimeMillis() - initialTime)/1000)+" second(s))");
     }
     
