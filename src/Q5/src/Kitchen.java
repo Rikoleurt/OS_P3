@@ -23,7 +23,7 @@ class Kitchen {
     /**
      * Intermediary stock
      */
-    Stock stockC = new Stock("C", 0);
+    Stock stockC = new Stock("C", 0); // new stock
     /**
      * Stock of final (prepared) food
      */

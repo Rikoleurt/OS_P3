@@ -47,10 +47,9 @@ class Stove extends Thread {
      */
     public void prepare() throws InterruptedException {
         A.get();
-        System.out.println(Thread.currentThread().getName() + " : " + A.display() + ", " + B.display());
-        try { Thread.sleep(64); } catch(InterruptedException e) {}
         B.put();
-        System.out.println(Thread.currentThread().getName() + " : " + A.display() + ", " + B.display());
+//        System.out.println(A.display());
+//        System.out.println(B.display());
     }
 
 

@@ -1,0 +1,18 @@
+Example of output for Q2 with synchronization:
+Starting kitchen work ...
+The stock input contains 0 food.
+The stock output contains 100000000 food.
+Thread : main : The stock input contains 0 food.
+... done (9.303 second(s))
+
+Example of output for Q2 without synchronization:
+Starting kitchen work ...
+The stock input contains 48105788 food.
+The stock output contains 51444067 food.
+Thread : main : The stock input contains 48105788 food.
+... done (0.153 second(s))
+
+We observe that two threads accelerate the process time of the food, but we notice huge inconsistencies in the results.
+This can be explained by the concurrency problem (Multiple processes or threads access and modify shared resources
+simultaneously, which may lead to deadlocks, resource starvation or race conditions). We can correct this problem by
+using the keyword in Java "synchronized" in the method signature of put() and get().

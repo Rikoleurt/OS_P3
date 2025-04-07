@@ -1,0 +1,39 @@
+Example of output for Q1 :
+Starting kitchen work ...
+The stock input contains 14 food.
+The stock input contains 15 food.
+The stock output contains 0 food.
+The stock input contains 13 food.
+The stock output contains 0 food.
+The stock input contains 12 food.
+The stock output contains 2 food.
+The stock input contains 11 food.
+The stock output contains 3 food.
+The stock input contains 10 food.
+The stock output contains 4 food.
+The stock input contains 9 food.
+The stock output contains 5 food.
+The stock input contains 8 food.
+The stock output contains 6 food.
+The stock input contains 7 food.
+The stock output contains 7 food.
+The stock input contains 6 food.
+The stock output contains 8 food.
+The stock input contains 5 food.
+The stock output contains 9 food.
+The stock input contains 4 food.
+The stock output contains 10 food.
+The stock input contains 3 food.
+The stock output contains 11 food.
+The stock input contains 2 food.
+The stock output contains 12 food.
+The stock input contains 1 food.
+The stock output contains 13 food.
+The stock input contains 0 food.
+The stock output contains 14 food.
+The stock output contains 14 food.
+... done (0.556 second(s))
+The stock input contains 0 food.
+The stock output contains 16 food.
+
+Here, the result is correct with the implementation. (But, we can observe the concurrency problem)

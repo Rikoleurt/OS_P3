@@ -18,23 +18,23 @@ class Kitchen {
 	/**
 	 * Stock of food to prepare
 	 */
-    Stock stockA = new Stock("A", 10000);
+    Stock stockA = new Stock("A", 10000, 10000);
 
     /**
      * Intermediary stock
      */
-    Stock stockC = new Stock("C", 0);
+    Stock stockC = new Stock("C", 0, 1);
     /**
      * Stock of final (prepared) food
      */
-    Stock stockB = new Stock("B", 0);
+    Stock stockB = new Stock("B", 0, 10000);
     /**
      * Stoves for the preparations
      */
-    Stove stove1a = new Stove(stockA, stockC, 16);
-    Stove stove1b = new Stove(stockA, stockC, 16);
-    Stove stove2 = new Stove(stockC, stockB, 8);
-    Stove stove3 = new Stove(stockB, stockA, 8);
+    Stove stove1a = new Stove(stockA, stockC, 5000);
+    Stove stove1b = new Stove(stockA, stockC, 5000);
+    Stove stove2 = new Stove(stockC, stockB, 5000);
+    Stove stove3 = new Stove(stockC, stockB, 5000);
     
     /**
      * Main entry point: proceed to operate the kitchen work of preparation
@@ -43,19 +43,25 @@ class Kitchen {
         System.out.println("Starting kitchen work ...");
         long initialTime = System.currentTimeMillis();
 
+        stove1a.start();
+        stove1b.start();
         stove2.start();
         stove3.start();
-        stove1a.start();
+
         try {
-            stove3.join();
-            stove2.join();
             stove1a.join();
+            stove1b.join();
+            stove2.join();
+            stove3.join();
 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
         System.out.println("... done ("+((double)(System.currentTimeMillis() - initialTime)/1000)+" second(s))");
+        System.out.println(stockA.display());
+        System.out.println(stockC.display());
+        System.out.println(stockB.display());
     }
     
     /**

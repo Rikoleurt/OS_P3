@@ -40,13 +40,14 @@ class Stock {
      */
     public synchronized void put() {
         nbFood++;
-        notify();
+        notify(); // Notify the thread that is waiting
     }
 
     /**
      * Removes (takes) food
      */
     public synchronized void get() throws InterruptedException {
+        // Avoid negative values in stock C
         while (nbFood ==  0) {
             try {
                 wait();

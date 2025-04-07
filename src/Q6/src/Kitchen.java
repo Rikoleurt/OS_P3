@@ -18,7 +18,7 @@ class Kitchen {
 	/**
 	 * Stock of food to prepare
 	 */
-    Stock stockA = new Stock("A", 10000);
+    Stock stockA = new Stock("A", 16);
 
     /**
      * Intermediary stock
@@ -31,10 +31,9 @@ class Kitchen {
     /**
      * Stoves for the preparations
      */
-    Stove stove1a = new Stove(stockA, stockC, 16);
-    Stove stove1b = new Stove(stockA, stockC, 16);
+    Stove stove1 = new Stove(stockA, stockC, 16);
     Stove stove2 = new Stove(stockC, stockB, 8);
-    Stove stove3 = new Stove(stockB, stockA, 8);
+    Stove stove3 = new Stove(stockC, stockB, 8); // New stove that will do the same job, as stove 2
     
     /**
      * Main entry point: proceed to operate the kitchen work of preparation
@@ -45,11 +44,11 @@ class Kitchen {
 
         stove2.start();
         stove3.start();
-        stove1a.start();
+        stove1.start(); // Last thread to start is stove 1
         try {
-            stove3.join();
             stove2.join();
-            stove1a.join();
+            stove3.join();
+            stove1.join();
 
         } catch (InterruptedException e) {
             e.printStackTrace();

@@ -1,0 +1,77 @@
+--------------------------------------------- Example of output for Q3 :
+
+Starting kitchen work ...
+Thread : Thread-0 : The stock input contains 15 food.
+Thread : Thread-1 : The stock input contains 14 food.
+Thread : Thread-1 : The stock output contains 1 food.
+Thread : Thread-1 : The stock input contains 13 food.
+Thread : Thread-0 : The stock output contains 2 food.
+Thread : Thread-0 : The stock input contains 12 food.
+Thread : Thread-1 : The stock output contains 3 food.
+Thread : Thread-0 : The stock output contains 4 food.
+Thread : Thread-1 : The stock input contains 11 food.
+Thread : Thread-0 : The stock input contains 10 food.
+Thread : Thread-0 : The stock output contains 5 food.
+Thread : Thread-0 : The stock input contains 9 food.
+Thread : Thread-1 : The stock output contains 6 food.
+Thread : Thread-1 : The stock input contains 8 food.
+Thread : Thread-0 : The stock output contains 7 food.
+Thread : Thread-0 : The stock input contains 7 food.
+Thread : Thread-1 : The stock output contains 8 food.
+Thread : Thread-1 : The stock input contains 6 food.
+Thread : Thread-1 : The stock output contains 9 food.
+Thread : Thread-1 : The stock input contains 5 food.
+Thread : Thread-0 : The stock output contains 10 food.
+Thread : Thread-0 : The stock input contains 4 food.
+Thread : Thread-0 : The stock output contains 11 food.
+Thread : Thread-0 : The stock input contains 3 food.
+Thread : Thread-1 : The stock output contains 12 food.
+Thread : Thread-1 : The stock input contains 2 food.
+Thread : Thread-0 : The stock output contains 13 food.
+Thread : Thread-0 : The stock input contains 1 food.
+Thread : Thread-1 : The stock output contains 14 food.
+Thread : Thread-1 : The stock input contains 0 food.
+Thread : Thread-1 : The stock output contains 15 food.
+Thread : Thread-0 : The stock output contains 16 food.
+Thread : main : The stock output contains 16 food.
+... done (0.558 second(s))
+
+--------------------------------------------- Another example :
+
+Starting kitchen work ...
+Thread : Thread-1 : The stock input contains 15 food.
+Thread : Thread-0 : The stock input contains 14 food.
+Thread : Thread-1 : The stock output contains 1 food.
+Thread : Thread-1 : The stock input contains 13 food.
+Thread : Thread-0 : The stock output contains 2 food.
+Thread : Thread-0 : The stock input contains 12 food.
+Thread : Thread-0 : The stock output contains 4 food.
+Thread : Thread-0 : The stock input contains 11 food.
+Thread : Thread-1 : The stock output contains 4 food.
+Thread : Thread-1 : The stock input contains 10 food.
+Thread : Thread-0 : The stock output contains 5 food.
+Thread : Thread-0 : The stock input contains 9 food.
+Thread : Thread-1 : The stock output contains 6 food.
+Thread : Thread-1 : The stock input contains 8 food.
+Thread : Thread-1 : The stock output contains 7 food.
+Thread : Thread-1 : The stock input contains 7 food.
+Thread : Thread-0 : The stock output contains 8 food.
+Thread : Thread-0 : The stock input contains 6 food.
+Thread : Thread-0 : The stock output contains 9 food.
+Thread : Thread-0 : The stock input contains 5 food.
+Thread : Thread-1 : The stock output contains 10 food.
+Thread : Thread-1 : The stock input contains 4 food.
+Thread : Thread-0 : The stock output contains 11 food.
+Thread : Thread-0 : The stock input contains 3 food.
+Thread : Thread-1 : The stock output contains 12 food.
+Thread : Thread-1 : The stock input contains 2 food.
+Thread : Thread-0 : The stock output contains 13 food.
+Thread : Thread-0 : The stock input contains 1 food.
+Thread : Thread-1 : The stock output contains 14 food.
+Thread : Thread-1 : The stock input contains 0 food.
+Thread : Thread-0 : The stock output contains 15 food.
+Thread : Thread-1 : The stock output contains 16 food.
+Thread : main : The stock output contains 16 food.
+... done (0.558 second(s))
+
+We notice differences between the outputs. The scheduler doesn't guarantee a fix execution order of the threads.

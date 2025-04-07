@@ -1,0 +1,72 @@
+Example of output for Q5
+
+Starting kitchen work ...
+Thread-0 : A contains 15 food, C contains 0 food
+Thread-1 : C contains 0 food, B contains 0 food
+Thread-0 : A contains 15 food, C contains 0 food
+Thread-0 : A contains 14 food, C contains 0 food
+Thread-0 : A contains 14 food, C contains 1 food
+Thread-0 : A contains 13 food, C contains 1 food
+Thread-1 : C contains 1 food, B contains 1 food
+Thread-1 : C contains 0 food, B contains 1 food
+Thread-1 : C contains 0 food, B contains 2 food
+Thread-0 : A contains 13 food, C contains 1 food
+Thread-0 : A contains 12 food, C contains 1 food
+Thread-1 : C contains 0 food, B contains 2 food
+Thread-1 : C contains 1 food, B contains 3 food
+Thread-1 : C contains 0 food, B contains 3 food
+Thread-0 : A contains 12 food, C contains 0 food
+Thread-0 : A contains 11 food, C contains 0 food
+Thread-1 : C contains 1 food, B contains 4 food
+Thread-1 : C contains 0 food, B contains 4 food
+Thread-0 : A contains 11 food, C contains 1 food
+Thread-0 : A contains 10 food, C contains 0 food
+Thread-1 : C contains 0 food, B contains 5 food
+Thread-1 : C contains 0 food, B contains 5 food
+Thread-0 : A contains 10 food, C contains 0 food
+Thread-0 : A contains 9 food, C contains 0 food
+Thread-0 : A contains 9 food, C contains 1 food
+Thread-0 : A contains 8 food, C contains 1 food
+Thread-1 : C contains 1 food, B contains 6 food
+Thread-1 : C contains 0 food, B contains 6 food
+Thread-0 : A contains 8 food, C contains 1 food
+Thread-0 : A contains 7 food, C contains 1 food
+Thread-1 : C contains 1 food, B contains 7 food
+Thread-1 : C contains 0 food, B contains 7 food
+Thread-0 : A contains 7 food, C contains 1 food
+Thread-0 : A contains 6 food, C contains 1 food
+Thread-1 : C contains 1 food, B contains 8 food
+Thread-1 : C contains 0 food, B contains 8 food
+Thread-0 : A contains 6 food, C contains 1 food
+Thread-0 : A contains 5 food, C contains 1 food
+Thread-1 : C contains 1 food, B contains 9 food
+Thread-1 : C contains 0 food, B contains 9 food
+Thread-0 : A contains 5 food, C contains 1 food
+Thread-0 : A contains 4 food, C contains 1 food
+Thread-1 : C contains 1 food, B contains 10 food
+Thread-1 : C contains 0 food, B contains 10 food
+Thread-0 : A contains 4 food, C contains 1 food
+Thread-0 : A contains 3 food, C contains 1 food
+Thread-1 : C contains 1 food, B contains 11 food
+Thread-1 : C contains 0 food, B contains 11 food
+Thread-0 : A contains 3 food, C contains 1 food
+Thread-0 : A contains 2 food, C contains 1 food
+Thread-1 : C contains 1 food, B contains 12 food
+Thread-1 : C contains 0 food, B contains 12 food
+Thread-0 : A contains 2 food, C contains 1 food
+Thread-0 : A contains 1 food, C contains 1 food
+Thread-1 : C contains 1 food, B contains 13 food
+Thread-1 : C contains 0 food, B contains 13 food
+Thread-1 : C contains 1 food, B contains 14 food
+Thread-0 : A contains 1 food, C contains 1 food
+Thread-1 : C contains 0 food, B contains 14 food
+Thread-0 : A contains 0 food, C contains 0 food
+Thread-0 : A contains 0 food, C contains 1 food
+Thread-1 : C contains 1 food, B contains 15 food
+Thread-1 : C contains 0 food, B contains 15 food
+Thread-1 : C contains 0 food, B contains 16 food
+... done (1.168 second(s))
+
+The problem has been corrected with the use of wait() and notify(). I added a condition to avoid negative values in the
+stock C.
+If the stock doesn't have any food (i.e. nbFood == 0), we make the thread wait until there is food.

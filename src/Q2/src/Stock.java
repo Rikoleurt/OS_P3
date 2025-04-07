@@ -40,14 +40,14 @@ class Stock {
      */
     public synchronized void put() {
         nbFood++;
-    }
+    } // synchronized keyword to correct concurrency issues
 
     /**
      * Removes (takes) food
      */
     public synchronized void get() {
         nbFood--;
-    }
+    } // synchronized keyword to correct concurrency issues
 
     /**
      * Display the stock status

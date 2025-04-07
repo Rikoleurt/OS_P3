@@ -35,6 +35,7 @@ class Kitchen {
         System.out.println("Starting kitchen work ...");
         long initialTime = System.currentTimeMillis();
 
+        // Introducing multi-threading
         stove1.start();
         stove2.start();
 
@@ -45,9 +46,10 @@ class Kitchen {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        System.out.println("... done ("+((double)(System.currentTimeMillis() - initialTime)/1000)+" second(s))");
         System.out.println(stockInput.display());
         System.out.println(stockOutput.display());
-        System.out.println("... done ("+((double)(System.currentTimeMillis() - initialTime)/1000)+" second(s))");
     }
     
     /**

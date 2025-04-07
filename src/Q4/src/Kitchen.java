@@ -31,8 +31,8 @@ class Kitchen {
     /**
      * Stoves for the preparations
      */
-    Stove stove1 = new Stove(stockA, stockC, 16);
-    Stove stove2 = new Stove(stockC, stockB, 16);
+    Stove stove1 = new Stove(stockA, stockC, 16); // Re-organization, stove 1 operates between stock A and C
+    Stove stove2 = new Stove(stockC, stockB, 16); // Stove 2 operates between stock C and stock B (= output)
     
     /**
      * Main entry point: proceed to operate the kitchen work of preparation

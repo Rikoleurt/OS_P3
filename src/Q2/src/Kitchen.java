@@ -18,7 +18,7 @@ class Kitchen {
 	/**
 	 * Stock of food to prepare
 	 */
-    Stock stockInput = new Stock("input", 100000000);
+    Stock stockInput = new Stock("input", 100000000); // Changed the food number
     /**
      * Stock of final (prepared) food
      */
@@ -26,14 +26,14 @@ class Kitchen {
     /**
      * Stoves for the preparations
      */
-    Stove stove1 = new Stove(stockInput, stockOutput, 50000000);
+    Stove stove1 = new Stove(stockInput, stockOutput, 50000000); // Divide the task between two stoves
     Stove stove2 = new Stove(stockInput, stockOutput, 50000000);
     
     /**
      * Main entry point: proceed to operate the kitchen work of preparation
      */
-    public synchronized void work() {
-        System.out.println("CPU core nb : " + Runtime.getRuntime().availableProcessors());
+    public void work() {
+        System.out.println("CPU core nb : " + Runtime.getRuntime().availableProcessors()); // Number of available processors
         System.out.println("Starting kitchen work ...");
         long initialTime = System.currentTimeMillis();
 

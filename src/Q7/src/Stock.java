@@ -24,24 +24,37 @@ class Stock {
      * Name of the stock
      */
     private String name;
-
+    /**
+     * Maximum capacity of the stock
+     */
+    private int maxCapacity;
     /**
      * Creates a new Stock object
      * @param name its name
      * @param nbFood initial number of food
      */
-    public Stock(String name, int nbFood) {
+    public Stock(String name, int nbFood, int maxCapacity) {
         this.nbFood = nbFood;
-        this.name = name;		
+        this.name = name;
+        this.maxCapacity = maxCapacity; // Added maximum capacity value
     }
 
     /**
      * Adds food
      */
-    public synchronized void put() {
+    public synchronized void put() throws InterruptedException {
+        // Avoid the food to exceed the maximum capacity of the stocks
+        while (nbFood >= maxCapacity) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                System.out.println("Thread interrupted" + e.getMessage());
+                e.printStackTrace();
+            }
+
+        }
         nbFood++;
-        // System.out.println(Thread.currentThread().getName() + " : " + name + " : " + nbFood);
-        notify();
+        notifyAll(); // DEADLOCK /!\ if we use notify()
     }
 
     /**
@@ -56,9 +69,8 @@ class Stock {
                 e.printStackTrace();
             }
         }
-        // System.out.println(Thread.currentThread().getName() + " : " + name + " : " + nbFood);
         nbFood--;
-
+        notifyAll(); // DEADLOCK /!\ if we use notify()
     }
 
     /**
@@ -67,8 +79,9 @@ class Stock {
     public String display() {
         return name + " contains " + nbFood + " food";
     }
-
     public String getName() {
         return name;
     }
+    public int getMaxCapacity() { return maxCapacity; }
+    public int getNbFood() { return nbFood; }
 }

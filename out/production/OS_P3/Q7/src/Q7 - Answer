@@ -1,0 +1,12 @@
+We notice that it doesn't work if we use notify() because it certainly creates deadlocks (the program doesn't end).
+The method notify() arbitrary chose a thread to release but it may not be the one that makes the program continue.
+Replacing notify() by notifyAll() allows every thread to be released, guaranteeing no deadlocks in the process.
+
+Example of output for Q7 with notifyAll() :
+Starting kitchen work ...
+... done (0.069 second(s))
+A contains 0 food
+C contains 0 food
+B contains 10000 food
+
+The program is way faster than the other.
