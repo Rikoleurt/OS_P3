@@ -7,7 +7,7 @@
  * modifications you have made and what problems they fix or 
  * prevent, with references to the questions of the subject (Q1, Q2, etc.)
  */
-package Q5.src;
+package Q7.src;
 
 /**
  * Objects that are instances of the Stove class represent stoves to prepare

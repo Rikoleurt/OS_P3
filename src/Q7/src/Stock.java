@@ -7,7 +7,7 @@
  * modifications you have made and what problems they fix or 
  * prevent, with references to the questions of the subject (Q1, Q2, etc.)
  */
-package Q5.src;
+package Q7.src;
 /**
  * Objects of class Stock represent a set of food. Food is not effectively stored,
  * only a counter is used to represent how much food is available.
@@ -40,6 +40,7 @@ class Stock {
      */
     public synchronized void put() {
         nbFood++;
+        // System.out.println(Thread.currentThread().getName() + " : " + name + " : " + nbFood);
         notify();
     }
 
@@ -55,6 +56,7 @@ class Stock {
                 e.printStackTrace();
             }
         }
+        // System.out.println(Thread.currentThread().getName() + " : " + name + " : " + nbFood);
         nbFood--;
 
     }
