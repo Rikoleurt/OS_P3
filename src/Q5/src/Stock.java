@@ -7,7 +7,7 @@
  * modifications you have made and what problems they fix or 
  * prevent, with references to the questions of the subject (Q1, Q2, etc.)
  */
-package Q4.src;
+package Q5.src;
 /**
  * Objects of class Stock represent a set of food. Food is not effectively stored,
  * only a counter is used to represent how much food is available.
@@ -40,13 +40,23 @@ class Stock {
      */
     public synchronized void put() {
         nbFood++;
+        notify();
     }
 
     /**
      * Removes (takes) food
      */
-    public synchronized void get() {
+    public synchronized void get() throws InterruptedException {
+        while (nbFood ==  0) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                System.out.println("Thread interrupted" + e.getMessage());
+                e.printStackTrace();
+            }
+        }
         nbFood--;
+
     }
 
     /**

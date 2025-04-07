@@ -7,7 +7,7 @@
  * modifications you have made and what problems they fix or 
  * prevent, with references to the questions of the subject (Q1, Q2, etc.)
  */
-package Q4.src;
+package Q5.src;
 
 /**
  * Objects that are instances of the Stove class represent stoves to prepare
@@ -45,7 +45,7 @@ class Stove extends Thread {
     /**
      * Proceeds to a single preparation from food of Stock A to food of Stock B
      */
-    public void prepare() {
+    public void prepare() throws InterruptedException {
         A.get();
         System.out.println("Thread : " + Thread.currentThread().getName() + ", " + A.display() + ", " + B.display());
         try { Thread.sleep(64); } catch(InterruptedException e) {}
@@ -57,7 +57,7 @@ class Stove extends Thread {
     /**
      * Proceeds to nbPrepare preparations
      */
-    public void work() {
+    public void work() throws InterruptedException {
         /* The name of this method should really be changed to override a
          * central method of the Thread class, but which one...? 
          */
@@ -67,7 +67,11 @@ class Stove extends Thread {
 
     @Override
     public void run() {
-        work();
+        try {
+            work();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /** 

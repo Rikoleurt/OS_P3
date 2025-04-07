@@ -7,7 +7,7 @@
  * modifications you have made and what problems they fix or 
  * prevent, with references to the questions of the subject (Q1, Q2, etc.)
  */
-package Q4.src;
+package Q5.src;
 
 /**
  * Objects instances of Kitchen represent a kitchen with initially two stoves and 
